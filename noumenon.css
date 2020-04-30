@@ -1,84 +1,176 @@
 @font-face {
     font-family: Silka Light;
     src: url("assets/fonts/silka-light-webfont.woff");
-  }
-  
-  @font-face {
+}
+
+@font-face {
+    font-family: Silka Medium;
+    src: url("assets/fonts/silka-silka-medium-webfont.woff");
+}
+
+@font-face {
     font-family: Silka Bold;
     src: url("assets/fonts/silka-semibold-webfont.woff");
-  }
-  
-  
-.header {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 2%;
 }
 
-.home {
-    display: flex;
-    justify-content: center;
+
+/* basics */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.bg {
-    width: 100%;
-    display: flex;
-    position: absolute;
-}
-
-.logo {
-    width: 50%;
-    position: absolute;
-    margin-top: 12%;
-
+#active {
+    color: black;
 }
 
 h3 {
-    margin-right: 50px;
     font-family: Silka Bold;
+    font-size: 20px;
 }
 
 a {
     text-decoration: none;
     color: black;
-    transition: 0.3s;
-
 }
 
-a:hover {
-    color: grey;
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
 }
 
+
+/* underline */
+
+ul {
+    padding: 0 30px;
+    display: table;
+    text-align: center;
+}
+
+li {
+    font-family: Silka Medium;
+    display: table-cell;
+    position: relative;
+    padding: 20px 0;
+}
+
+.header-link {
+    letter-spacing: 0.1em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    color: #9B9B9B;
+    margin: auto 0;
+}
+
+.header-link:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: grey;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.header-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+@media screen and (max-height: 300px) {
+    ul {
+        margin-top: 40px;
+    }
+}
+
+
+/* homepage */
+
+.home {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.bg {
+    width: 55%;
+    position: fixed;
+    z-index: -3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 100%;
+}
+
+.intro {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    flex-direction: row;
+    padding: 7%;
+}
+
+.box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
 
 .home p {
-    position: absolute;
-padding-top: 40%;
-    width: 50%;
     font-family: Silka Light;
     color: black;
     font-size: 13pt;
+    line-height: 1.7;
+    width: 85%;
 }
 
 
-/* collection */
-
-.noumenon-container {
-    display: grid;
-    grid-template-columns: auto auto auto;    
-}
+/* create */
 
 .info {
     position: absolute;
     display: block;
     z-index: 3;
     height: 100vh;
-
     font-family: Silka Bold;
     padding-top: 20%;
     font-size: 25pt;
     margin: 0 100px;
 }
 
-h2 {
-    
+
+/* collection */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 7%;
+}
+
+.noumenon {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.overview h3 {
+    width: 100%;
+    text-align: center;
+    transform: translateY(-110px);
 }

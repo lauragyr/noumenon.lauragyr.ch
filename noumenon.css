@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Silka Light;
+    src: url("assets/fonts/silka-light-webfont.woff");
+  }
+  
+  @font-face {
+    font-family: Silka Bold;
+    src: url("assets/fonts/silka-semibold-webfont.woff");
+  }
+  
+  
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.bg {
+    width: 100%;
+    display: flex;
+    position: absolute;
+}
+
+.logo {
+    width: 50%;
+    position: absolute;
+    margin-top: 12%;
+
+}
+
+h3 {
+    margin-right: 50px;
+    font-family: Silka Bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+
+}
+
+a:hover {
+    color: grey;
+}
+
+
+.home p {
+    position: absolute;
+padding-top: 40%;
+    width: 50%;
+    font-family: Silka Light;
+    color: black;
+    font-size: 13pt;
+}
+
+
+/* collection */
+
+.noumenon-container {
+    display: grid;
+    grid-template-columns: auto auto auto;    
+}
+
+.info {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    height: 100vh;
+
+    font-family: Silka Bold;
+    padding-top: 20%;
+    font-size: 25pt;
+    margin: 0 100px;
+}
+
+h2 {
+    
+}

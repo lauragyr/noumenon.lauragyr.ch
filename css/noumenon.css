@@ -1,0 +1,274 @@
+@font-face {
+    font-family: Silka Light;
+    src: url("assets/fonts/silka-light-webfont.woff");
+}
+
+@font-face {
+    font-family: Silka Medium;
+    src: url("assets/fonts/silka-silka-medium-webfont.woff");
+}
+
+@font-face {
+    font-family: Silka Bold;
+    src: url("assets/fonts/silka-semibold-webfont.woff");
+}
+
+
+/* basics */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#active {
+    color: black;
+}
+
+h2 {
+    font-family: Silka Light;
+    font-size: 40px;
+}
+
+h3 {
+    font-family: Silka Bold;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+h5 {
+    font-family: Silka Medium;
+    font-size: 16px;
+    color: #9B9B9B;
+    line-height: 1.5;
+}
+
+p {
+    font-family: Silka Light;
+    color: black;
+    font-size: 14pt;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+
+/* underline hover state menu */
+
+ul {
+    padding: 0 30px;
+    display: table;
+    text-align: center;
+}
+
+li {
+    font-family: Silka Medium;
+    display: table-cell;
+    position: relative;
+    padding: 20px 0;
+}
+
+.header-link {
+    letter-spacing: 0.1em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    color: #9B9B9B;
+    margin: auto 0;
+}
+
+.header-link:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #51D3FB;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.header-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+@media screen and (max-height: 300px) {
+    ul {
+        margin-top: 40px;
+    }
+}
+
+
+/* homepage */
+
+.home {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.bg {
+    width: 55%;
+    position: fixed;
+    z-index: -3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 100%;
+}
+
+.intro {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    flex-direction: row;
+    padding: 7%;
+}
+
+.box {
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
+
+.home p {
+    width: 85%;
+}
+
+
+/* create */
+
+.info {
+    padding-top: 100px;
+}
+
+.info h5 {
+    padding-top: 30px;
+    width: 60%;
+}
+
+#questionnaire {
+    height: 500px;
+    width: 500px;
+}
+
+#creation-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* collection */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 7%;
+}
+
+.overview h3 {
+    width: 100%;
+    text-align: center;
+    transform: translateY(-110px);
+}
+
+.teaser-wrapper img {
+    transform: rotate(0deg) scale(1);
+}
+
+.teaser-wrapper img:hover {
+    transform: rotate(20deg) scale(1.2);
+    transition: transform 1s;
+}
+
+.teaser-wrapper:hover {
+    color: #51D3FB;
+    transition: color 0.5s;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.noumenon {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+
+/* navigation / title on collection */
+
+.title {
+    display: flex;
+    padding-top: 100px;
+}
+
+.title>h2 {
+    padding-left: 20px;
+}
+
+#svg {
+    transform: scale(2);
+}
+
+#icon-box {
+    margin: auto 0;
+    fill: #9B9B9B;
+}
+
+#icon-box:hover {
+    fill: #51D3FB;
+    transition: fill 0.5s;
+}
+
+
+/* contact */
+
+.contact {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact>div {
+    margin: auto;
+    padding-left: 40px;
+}
+
+.contact img {
+    width: 30vw;
+}
+
+#email {
+    padding-top: 70px;
+}
+
+#website {
+    padding-top: 35px;
+}
+
+#email>a:hover,
+#website>a:hover {
+    color: #51D3FB;
+    transition: color 0.5s;
+}

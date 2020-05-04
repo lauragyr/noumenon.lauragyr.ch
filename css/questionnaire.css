@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* START  */
+
+#homescreen {
+    padding-top: 130px;
+}
+
+#start {
+    color: #A09F9F;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.button {
+    width: 500px;
+    height: 200px;
+    border: solid 4px #A09F9F;
+    animation: vibrate 1.2s infinite ease-in-out;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* QUESTIONS */
+
+.question {
+    clear: both;
+    color: #A09F9F;
+}
+
+
+/* choices */
+
+.choices {
+    display: flex;
+    width: 1200px;
+    height: 300px;
+}
+
+.choices p {
+    text-align: center;
+    color: #A09F9F;
+}
+
+
+/*  choices text  */
+
+.choiceText {
+    width: 150px;
+    margin: 30px 30px 0px 0px;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    border: 4px solid #A09F9F;
+    display: inline-block;
+}
+
+
+/*  choices images  */
+
+.choiceImage {
+    border: 4px solid #A09F9F;
+    margin: 30px 30px 0px 0px;
+}
+
+.choiceImage>div {
+    height: 200px;
+}
+
+.choiceImage img {
+    width: 230px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.choiceImage p {
+    height: 30px;
+    padding-top: 5px;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gif {
+    height: 200px;
+    margin-bottom: 100px;
+}
+
+
+/*  choices answers  */
+
+.answers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1100px;
+}
+
+.choiceAnswer {
+    border: 4px solid #A09F9F;
+    width: 230px;
+    height: 150px;
+    margin: 30px 30px 0px 0px;
+}
+
+.row2 {
+    padding-top: 26px;
+}
+
+.activeImage,
+.activeCircle,
+.activeAnswer,
+.activeButton,
+.activeEnd {
+    border-color: #000000!important;
+    background-color: #000000!important;
+}
+
+
+/*  ENDSCREEN  */
+
+#backto,
+#drucken {
+    color: #A09F9F;
+    border: solid 4px #A09F9F;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+}
+
+#questionBox15 {
+    margin-top: 100px;
+}
+
+#lastBox :nth-child(2) {
+    margin-left: 30px;
+    padding-top: 55px;
+}
+
+#lastBox :nth-child(1) {
+    padding-top: 75px;
+}
+
+#lastBox {
+    display: flex;
+    padding-top: 42px;
+}
+
+
+/*  WENN PRINT-BUTTON GEDRUCKT  */
+
+#printBox {
+    margin-top: 100px;
+}
+
+
+/*  PROGRESS BAR  */
+
+.barContainer {
+    height: 50px;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.defaultBar {
+    width: 600px;
+    height: 2px;
+    background-color: #404040;
+}
+
+.progressBar {
+    height: 2px;
+    background-color: #A09F9F;
+    width: 0%;
+}

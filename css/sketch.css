@@ -1,5 +1,3 @@
-canvas {}
-
 .rotation {
     animation: spin 40s ease-in-out infinite;
 }

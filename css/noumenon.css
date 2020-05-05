@@ -31,7 +31,7 @@ h2 {
 }
 
 h3 {
-    font-family: Silka Bold;
+    font-family: Silka Medium;
     font-size: 24px;
     line-height: 1.2;
 }
@@ -175,6 +175,7 @@ li {
 #creation-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
 }
 
 

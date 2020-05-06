@@ -3,6 +3,18 @@
 }
 
 
+/* colors */
+
+:root {
+    --white: #ffffff;
+    --light-grey: #eeeeee;
+    --text-grey: #9b9b9b;
+    --dark-grey: #404040;
+    --black: #000000;
+    --primary: #51D3FB;
+}
+
+
 /* START  */
 
 #homescreen {
@@ -10,7 +22,7 @@
 }
 
 #start {
-    color: #000000;
+    color: var(--dark-grey);
     text-align: center;
     margin: 0 auto;
 }
@@ -18,7 +30,7 @@
 .button {
     padding: 20px;
     width: 250px;
-    border: solid 4px #000000;
+    border: solid 2px var(--dark-grey);
     animation: vibrate 3s infinite ease-in-out;
     border-radius: 8px;
 }
@@ -40,7 +52,8 @@
 
 .question {
     clear: both;
-    color: #000000;
+    color: var(--black);
+    width: 45vw;
 }
 
 
@@ -54,7 +67,7 @@
 
 .choices p {
     text-align: center;
-    color: #00000;
+    color: var(--dark-grey);
 }
 
 
@@ -69,7 +82,7 @@
     width: 80px;
     height: 80px;
     border-radius: 100px;
-    border: 4px solid #000000;
+    border: 2px solid var(--dark-grey);
     display: inline-block;
 }
 
@@ -77,23 +90,22 @@
 /*  choices images  */
 
 .choiceImage {
-    border: 4px solid #000000;
+    border: 2px solid var(--dark-grey);
     margin: 30px 30px 0px 0px;
 }
 
 .choiceImage>div {
-    height: 200px;
+    height: 180px;
 }
 
 .choiceImage img {
-    width: 230px;
-    height: 200px;
+    width: 220px;
+    height: 170px;
     object-fit: cover;
 }
 
 .choiceImage p {
-    height: 30px;
-    padding-top: 5px;
+    height: 40px;
 }
 
 .images {
@@ -119,7 +131,7 @@
 }
 
 .choiceAnswer {
-    border: 4px solid #000000;
+    border: 2px solid var(--dark-grey);
     width: 230px;
     height: 150px;
     margin: 30px 30px 0px 0px;
@@ -134,8 +146,8 @@
 .activeAnswer,
 .activeButton,
 .activeEnd {
-    border-color: #000000!important;
-    background-color: #000000!important;
+    border-color: var(--text-grey) !important;
+    background-color: var(--text-grey) !important;
 }
 
 
@@ -143,8 +155,8 @@
 
 #backto,
 #drucken {
-    color: #000000;
-    border: solid 4px #000000;
+    color: var(--dark-grey);
+    border: solid 4px var(--dark-grey);
     text-align: center;
     width: 500px;
     height: 200px;
@@ -169,29 +181,22 @@
 }
 
 
-/*  WENN PRINT-BUTTON GEDRUCKT  */
-
-#printBox {
-    margin-top: 100px;
-}
-
-
 /*  PROGRESS BAR  */
 
 .barContainer {
-    height: 50px;
+    display: flex;
     justify-content: center;
-    padding-top: 5%;
+    margin: 5% 0%;
 }
 
 .defaultBar {
     width: 600px;
     height: 2px;
-    background-color: #404040;
+    background-color: var(--light-grey);
 }
 
 .progressBar {
     height: 2px;
-    background-color: #000000;
+    background-color: var(--dark-grey);
     width: 0%;
 }

@@ -8,9 +8,16 @@
     src: url("assets/fonts/silka-silka-medium-webfont.woff");
 }
 
-@font-face {
-    font-family: Silka Bold;
-    src: url("assets/fonts/silka-semibold-webfont.woff");
+
+/* colors */
+
+:root {
+    --white: #ffffff;
+    --light-grey: #eeeeee;
+    --text-grey: #9b9b9b;
+    --dark-grey: #404040;
+    --black: #000000;
+    --primary: #51D3FB;
 }
 
 
@@ -22,7 +29,7 @@
 }
 
 #active {
-    color: black;
+    color: var(--black);
 }
 
 h2 {
@@ -39,20 +46,20 @@ h3 {
 h5 {
     font-family: Silka Medium;
     font-size: 16px;
-    color: #9B9B9B;
+    color: var(--text-grey);
     line-height: 1.5;
 }
 
 p {
     font-family: Silka Light;
-    color: black;
+    color: var(--black);
     font-size: 14pt;
     line-height: 1.7;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--black);
 }
 
 
@@ -86,7 +93,7 @@ li {
     padding: 15px 20px;
     position: relative;
     text-decoration: none;
-    color: #9B9B9B;
+    color: var(--text-grey);
     margin: auto 0;
 }
 
@@ -97,7 +104,7 @@ li {
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #51D3FB;
+    background: var(--primary);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
@@ -164,7 +171,7 @@ li {
 
 .info h5 {
     padding-top: 30px;
-    width: 60%;
+    width: 80%;
 }
 
 #questionnaire {
@@ -176,7 +183,28 @@ li {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
+    height: 60vh;
 }
+
+#sketch {
+    box-shadow: 2px 2px 30px var(--light-grey);
+}
+
+
+/*sketch animation for the end */
+
+
+/*.rotation {
+    animation: spin 40s ease-in-out infinite;
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+*/
 
 
 /* collection */
@@ -270,6 +298,6 @@ li {
 
 #email>a:hover,
 #website>a:hover {
-    color: #51D3FB;
+    color: var(--primary);
     transition: color 0.5s;
 }

@@ -20,7 +20,8 @@ function setup() {
     let canvas = createCanvas(500, 500);
     canvas.parent('sketch');
 
-    background(230);
+    noStroke();
+    background(255);
     fill(colorR, colorG, colorB, a);
     //smooth();
 }
@@ -52,26 +53,26 @@ function polygon(x, y, radius, npoints) {
 
 // all functions
 function size() {
-    if (keyCode === UP_ARROW) {
-        radius = 10;
+    if (a1 === 6) {
+        radius = 40;
         rotate(-generalAngle);
         polygon(pos, pos, radius, npoints);
         generalAngle = generalAngle + distance;
 
-    } else if (keyCode === DOWN_ARROW) {
+    } else if (a1 === 1) {
         radius = 30;
         rotate(-generalAngle);
         polygon(pos, pos, radius, npoints);
         generalAngle = generalAngle + distance;
 
-    } else if (keyCode === 37) {
+    } else if (a1 === 5) {
         radius = 60;
         rotate(-generalAngle);
         polygon(pos, pos, radius, npoints);
         generalAngle = generalAngle + distance;
         a = 20;
 
-    } else if (keyCode === 39) {
+    } else if (a1 === 2) {
         radius = 120;
         rotate(-generalAngle);
         polygon(pos, pos, radius, npoints);
@@ -83,12 +84,12 @@ function size() {
 
 function form() {
     //q
-    if (keyCode === 81) {
+    if (a2 === 1) {
         rotate(-generalAngle);
         npoints = 50;
         polygon(pos, pos, radius, npoints);
         generalAngle = generalAngle + distance;
-    } else if (keyCode === 87) {
+    } else if (a2 === 2) {
         rotate(-generalAngle);
         npoints = 10;
         polygon(pos, pos, radius, npoints);
@@ -96,7 +97,7 @@ function form() {
     }
 
     //e
-    else if (keyCode === 69) {
+    else if (a2 === 4) {
         rotate(-generalAngle);
         npoints = 3;
         polygon(pos, pos, radius, npoints);
@@ -104,7 +105,7 @@ function form() {
     }
 
     //r
-    else if (keyCode === 82) {
+    else if (a2 === 3) {
         rotate(-generalAngle);
         npoints = 5;
         polygon(pos, pos, radius, npoints);
@@ -112,7 +113,7 @@ function form() {
     }
 
     //t
-    else if (keyCode === 84) {
+    else if (a2 === 5) {
         rotate(-generalAngle);
         npoints = 30;
         polygon(pos, pos, radius, npoints);

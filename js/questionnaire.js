@@ -76,10 +76,8 @@ document.getElementById("start").addEventListener("click", function() {
         socket.emit('answers', 0);
         questionBox1.style.display = "block";
         homescreen.style.display = "none";
-        resetButton.style.display = "flex";
 
         //progressBar display
-        barContainer.style.display = "flex";
         window.progressWidth = 0;
         progressBar.style.width = window.progressWidth + '%';
         resetCSS();

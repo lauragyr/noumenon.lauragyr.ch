@@ -1,6 +1,5 @@
 //data-stuff
 let gegebenAntworten;
-let data;
 let surveyData = [];
 
 
@@ -32,13 +31,9 @@ function resetAllParameters() {
 }
 resetAllParameters();
 
+
+
 function setup() {
-    let canvas = createCanvas(1000, 1000);
-    canvas.parent('sketch');
-    noStroke();
-    background(0);
-
-
     //numbers for visuals on startscreen
     /*var today = new Date();
     let labelingNoumenon = document.getElementById("notDetectedBox");
@@ -57,26 +52,26 @@ function setup() {
 
 // which one is the last object
 function drawData(currentAnswerSwitchData) {
-    if (gegebenAntworten != Object.keys(data).length) {
-        gegebenAntworten = Object.keys(data).length;
+    if (gegebenAntworten != Object.keys(currentAnswerSwitchData).length) {
+        gegebenAntworten = Object.keys(currentAnswerSwitchData).length;
         possibleParameters.alpha = 50;
     }
 
     surveyData = [
-        data.antwort1,
-        data.antwort2,
-        data.antwort3,
-        data.antwort4,
-        data.antwort5,
-        data.antwort6,
-        data.antwort7,
-        data.antwort8,
-        data.antwort9,
-        data.antwort10,
-        data.antwort11,
-        data.antwort12,
-        data.antwort13,
-        data.antwort14,
+        currentAnswerSwitchData.antwort1,
+        currentAnswerSwitchData.antwort2,
+        currentAnswerSwitchData.antwort3,
+        currentAnswerSwitchData.antwort4,
+        currentAnswerSwitchData.antwort5,
+        currentAnswerSwitchData.antwort6,
+        currentAnswerSwitchData.antwort7,
+        currentAnswerSwitchData.antwort8,
+        currentAnswerSwitchData.antwort9,
+        currentAnswerSwitchData.antwort10,
+        currentAnswerSwitchData.antwort11,
+        currentAnswerSwitchData.antwort12,
+        currentAnswerSwitchData.antwort13,
+        currentAnswerSwitchData.antwort14,
     ];
 }
 

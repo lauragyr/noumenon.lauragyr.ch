@@ -447,15 +447,23 @@
     </div>
 
     <script>
-        let currentAnswerSwitchData;
-    </script>
+        // where the answers will be stored
+        let currentAnswerSwitchData = [];
 
+        // connect sketch-id in questionnaire with p5-canvas
+        let sketch = function(p) {
+            p.setup = function() {
+                p.createCanvas(500, 500);
+            }
+        };
+        new p5(sketch, window.document.getElementById('sketch'));
+    </script>
 
     <script language="javascript" src="libraries/socket.io.js"></script>
     <script src="js/answerSwitch.js"></script>
     <script src="js/questionnaire.js"></script>
     <script language="javascript" src="p5/sketch.js"></script>
-    <script language="javascript" src="p5/test-p5.js"></script>
+    <!--<script language="javascript" src="p5/test-p5.js"></script>-->
 
 
 </body>

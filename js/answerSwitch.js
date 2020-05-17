@@ -48,8 +48,8 @@ function setQ1Value(value) {
             q1a4.className = "choiceImage activeImage";
             break;
     }
-    console.log(a1);
-    currentAnswerSwitchData = a1;
+    currentAnswerSwitchData = [a1];
+    console.log(currentAnswerSwitchData);
 }
 
 // ANSWER 2
@@ -117,8 +117,8 @@ function setQ2Value(value) {
             q2a6.className = "circle activeCircle";
             break;
     }
-    console.log(a1, a2);
-    currentAnswerSwitchData = a2;
+    currentAnswerSwitchData = [a1, a2];
+    console.log(currentAnswerSwitchData);
 }
 
 //ANSWER 3

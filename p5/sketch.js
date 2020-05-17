@@ -78,7 +78,7 @@ function drawData(currentAnswerSwitchData) {
 function draw() {
     frameRate(3);
     translate(width / 2, height / 2);
-    scale(3.2);
+    scale(1);
     drawData();
 
     //clearing canvas after generating visual – click on start button

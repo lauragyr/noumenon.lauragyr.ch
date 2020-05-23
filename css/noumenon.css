@@ -188,7 +188,7 @@ li {
 
 #sketch {
     box-shadow: 2px 2px 30px var(--light-grey);
-    background-color: blue;
+    /* background-color: blue; */
     height: 500px;
     margin: auto 0;
 }

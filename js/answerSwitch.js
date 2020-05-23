@@ -1,3 +1,4 @@
+"use strict"
 let a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14;
 
 // ANSWER 1
@@ -48,8 +49,8 @@ function setQ1Value(value) {
             q1a4.className = "choiceImage activeImage";
             break;
     }
-    currentAnswerSwitchData = [a1];
-    console.log(currentAnswerSwitchData);
+    console.log(a1);
+    setAnswers();
 }
 
 // ANSWER 2
@@ -117,8 +118,8 @@ function setQ2Value(value) {
             q2a6.className = "circle activeCircle";
             break;
     }
-    currentAnswerSwitchData = [a1, a2];
-    console.log(currentAnswerSwitchData);
+    console.log(a2);
+    setAnswers();
 }
 
 //ANSWER 3
@@ -187,7 +188,7 @@ function setQ3Value(value) {
             break;
     }
     console.log(a3);
-    socket.emit('answers', a1, a2, a3);
+    setAnswers();
 }
 
 // ANSWER 4
@@ -239,7 +240,7 @@ function setQ4Value(value) {
             break;
     }
     console.log(a4);
-    socket.emit('answers', a1, a2, a3, a4);
+    setAnswers();
 }
 
 // ANSWER 5
@@ -308,7 +309,7 @@ function setQ5Value(value) {
             break;
     }
     console.log(a5);
-    socket.emit('answers', a1, a2, a3, a4, a5);
+    setAnswers();
 }
 
 // ANSWER 6
@@ -377,7 +378,7 @@ function setQ6Value(value) {
             break;
     }
     console.log(a6);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6);
+    setAnswers();
 }
 
 // ANSWER 7
@@ -429,7 +430,7 @@ function setQ7Value(value) {
             break;
     }
     console.log(a7);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7);
+    setAnswers();
 }
 
 // ANSWER 8
@@ -480,7 +481,7 @@ function setQ8Value(value) {
             break;
     }
     console.log(a8);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8);
+    setAnswers();
 }
 
 // ANSWER 9
@@ -549,7 +550,7 @@ function setQ9Value(value) {
             break;
     }
     console.log(a9);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8, a9);
+    setAnswers();
 }
 
 // ANSWER 10
@@ -618,7 +619,7 @@ function setQ10Value(value) {
             break;
     }
     console.log(a10);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    setAnswers();
 }
 
 // ANSWER 11
@@ -687,7 +688,7 @@ function setQ11Value(value) {
             break;
     }
     console.log(a11);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    setAnswers();
 }
 
 // ANSWER 12
@@ -738,7 +739,7 @@ function setQ12Value(value) {
             break;
     }
     console.log(a12);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    setAnswers();
 }
 
 // ANSWER 13
@@ -807,7 +808,7 @@ function setQ13Value(value) {
             break;
     }
     console.log(a13);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    setAnswers();
 }
 
 // ANSWER 14
@@ -859,5 +860,22 @@ function setQ14Value(value) {
             break;
     }
     console.log(a14);
-    socket.emit('answers', a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    setAnswers();
+}
+
+function setAnswers()
+{
+    currentAnswerSwitchData[1] = a1;
+    currentAnswerSwitchData[2] = a2;
+    currentAnswerSwitchData[3] = a3;
+    currentAnswerSwitchData[4] = a4;
+    currentAnswerSwitchData[5] = a5;
+    currentAnswerSwitchData[6] = a6;
+    currentAnswerSwitchData[7] = a7;
+    currentAnswerSwitchData[8] = a8;
+    currentAnswerSwitchData[9] = a9;
+    currentAnswerSwitchData[10] = a10;
+    currentAnswerSwitchData[11] = a11;
+    currentAnswerSwitchData[12] = a12;
+    currentAnswerSwitchData[13] = a13;
 }

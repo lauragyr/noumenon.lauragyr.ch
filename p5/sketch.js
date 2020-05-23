@@ -1,5 +1,7 @@
+"using strict"
+
 //data-stuff
-let gegebenAntworten;
+let gegebenAntworten = 0;
 let surveyData = [];
 
 
@@ -21,7 +23,6 @@ function resetAllParameters() {
         npoints: 25,
         radius: 60,
         distance: 0.1,
-        abe
         bgColor: "#ffffff",
         generalAngle: 1,
         alpha: 150,
@@ -33,7 +34,10 @@ resetAllParameters();
 
 
 
-function setup() {
+function setupCanvas()
+{
+    this.createCanvas(500, 500);
+    console.log("joo");
     //numbers for visuals on startscreen
     /*var today = new Date();
     let labelingNoumenon = document.getElementById("notDetectedBox");
@@ -51,41 +55,42 @@ function setup() {
 }
 
 // which one is the last object
-function drawData(currentAnswerSwitchData) {
+function pullData() {
     if (gegebenAntworten != Object.keys(currentAnswerSwitchData).length) {
         gegebenAntworten = Object.keys(currentAnswerSwitchData).length;
         possibleParameters.alpha = 50;
     }
 
     surveyData = [
-        currentAnswerSwitchData.antwort1,
-        currentAnswerSwitchData.antwort2,
-        currentAnswerSwitchData.antwort3,
-        currentAnswerSwitchData.antwort4,
-        currentAnswerSwitchData.antwort5,
-        currentAnswerSwitchData.antwort6,
-        currentAnswerSwitchData.antwort7,
-        currentAnswerSwitchData.antwort8,
-        currentAnswerSwitchData.antwort9,
-        currentAnswerSwitchData.antwort10,
-        currentAnswerSwitchData.antwort11,
-        currentAnswerSwitchData.antwort12,
-        currentAnswerSwitchData.antwort13,
-        currentAnswerSwitchData.antwort14,
+        currentAnswerSwitchData[0],
+        currentAnswerSwitchData[1],
+        currentAnswerSwitchData[2],
+        currentAnswerSwitchData[3],
+        currentAnswerSwitchData[4],
+        currentAnswerSwitchData[5],
+        currentAnswerSwitchData[6],
+        currentAnswerSwitchData[7],
+        currentAnswerSwitchData[8],
+        currentAnswerSwitchData[9],
+        currentAnswerSwitchData[10],
+        currentAnswerSwitchData[11],
+        currentAnswerSwitchData[12],
+        currentAnswerSwitchData[13]
     ];
 }
 
-function draw() {
-    frameRate(3);
-    translate(width / 2, height / 2);
-    scale(1);
-    drawData();
+function drawNoumenon() {
+    p5sketch.frameRate(3);
+    p5sketch.translate(p5sketch.width / 2, p5sketch.height / 2);
+    p5sketch.scale(1);
+    pullData();
+
+    // console.log("survedata0 " + surveyData[0]);
 
     //clearing canvas after generating visual – click on start button
     if (surveyData[0] === 0) {
         window.printed = false
         defaultCanvas0.classList.remove("rotation");
-
 
         resetAllParameters();
         return clear();
@@ -126,14 +131,14 @@ function draw() {
 
 //create polygon
 function polygon(x, y, radius, npoints) {
-    let angle = TWO_PI / npoints;
-    beginShape();
-    for (let a = 0; a < TWO_PI; a += angle) {
-        let sx = x + cos(a) * radius;
-        let sy = y + sin(a) * radius;
-        vertex(sx, sy);
+    let angle = p5sketch.TWO_PI / npoints;
+    p5sketch.beginShape();
+    for (let a = 0; a < p5sketch.TWO_PI; a += angle) {
+        let sx = x + p5sketch.cos(a) * radius;
+        let sy = y + p5sketch.sin(a) * radius;
+        p5sketch.vertex(sx, sy);
     }
-    endShape(CLOSE);
+    p5sketch.endShape(p5sketch.CLOSE);
 }
 
 function overwriteEachAnswer() {
@@ -146,7 +151,7 @@ function overwriteEachAnswer() {
     surveyData.forEach(
         function handleAnswers(value, index, array) {
             if (typeof(value) != "undefined") {
-                //console.log("surveyNumber " + index + " answer: " + value);
+                console.log("surveyNumber " + index + " answer: " + value);
                 changeValuesBasedOnSurvey(index, value);
             }
         }
@@ -196,22 +201,22 @@ function visualize() {
 
     document.body.style.background = possibleParameters.bgColor;
 
-    fill
-        (
-            possibleParameters.colorR,
-            possibleParameters.colorG,
-            possibleParameters.colorB,
-            possibleParameters.alpha
-        );
-    rotate(possibleParameters.generalAngle);
+    p5sketch.fill
+    (
+        possibleParameters.colorR,
+        possibleParameters.colorG,
+        possibleParameters.colorB,
+        possibleParameters.alpha
+    );
+    p5sketch.rotate(possibleParameters.generalAngle);
 
     polygon
-        (
-            possibleParameters.pos,
-            possibleParameters.pos,
-            possibleParameters.radius,
-            possibleParameters.npoints
-        );
+    (
+        possibleParameters.pos,
+        possibleParameters.pos,
+        possibleParameters.radius,
+        possibleParameters.npoints
+    );
 }
 
 function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
@@ -220,7 +225,7 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
     switch (surveyNumber + 1) // 1 - 17
     {
         case 1:
-            blendMode(BLEND);
+            p5sketch.p5sketch.blendMode(p5sketch.BLEND);
             switch (answerNumber) // 1 - 4 oder 6
             {
                 case 6:
@@ -230,9 +235,9 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.alphaStep = 3;
 
                     //rot
-                    changedParams.colorR = random(200, 220);
-                    changedParams.colorG = random(20, 40);
-                    changedParams.colorB = random(20, 40);
+                    changedParams.colorR = p5sketch.random(200, 220);
+                    changedParams.colorG = p5sketch.random(20, 40);
+                    changedParams.colorB = p5sketch.random(20, 40);
                     break;
                 case 1:
                     changedParams.pos = 140;
@@ -242,8 +247,8 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
 
                     //blau
                     changedParams.colorR = 0;
-                    changedParams.colorG = random(170, 190);
-                    changedParams.colorB = random(230, 250);
+                    changedParams.colorG = p5sketch.random(170, 190);
+                    changedParams.colorB = p5sketch.random(230, 250);
                     break;
                 case 5:
                     changedParams.pos = 60;
@@ -251,8 +256,8 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.npoints = 6;
 
                     //gelb
-                    changedParams.colorR = random(235, 255);
-                    changedParams.colorG = random(220, 240);
+                    changedParams.colorR = p5sketch.random(235, 255);
+                    changedParams.colorG = p5sketch.random(220, 240);
                     changedParams.colorB = 0;
                     break;
                 case 2:
@@ -262,8 +267,8 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.alphaStep = 3;
 
                     //grün
-                    changedParams.colorR = random(100, 120);
-                    changedParams.colorG = random(230, 250);
+                    changedParams.colorR = p5sketch.random(100, 120);
+                    changedParams.colorG = p5sketch.random(230, 250);
                     changedParams.colorB = 0;
                     break;
             }
@@ -275,66 +280,66 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.pos = 150;
                     changedParams.radius = 99;
                     changedParams.alphaStep = 3;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
 
                     //rot
                     changedParams.colorR = 255;
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(20, 40);
+                    changedParams.colorB = p5sketch.random(20, 40);
                     break;
                 case 2:
                     changedParams.pos = 130;
                     changedParams.radius = 88;
                     changedParams.alphaStep = 3;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
 
                     //pink
-                    changedParams.colorR = random(180, 200);
+                    changedParams.colorR = p5sketch.random(180, 200);
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(80, 100);
+                    changedParams.colorB = p5sketch.random(80, 100);
                     break;
                 case 3:
                     changedParams.pos = 110;
                     changedParams.radius = 77;
                     changedParams.alphaStep = 1;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //gelb
                     changedParams.colorR = 255;
-                    changedParams.colorG = random(220, 240);
+                    changedParams.colorG = p5sketch.random(220, 240);
                     changedParams.colorB = 0;
                     break;
                 case 4:
                     changedParams.pos = 90;
                     changedParams.radius = 66;
                     changedParams.alphaStep = 1;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
 
                     //grün
-                    changedParams.colorR = random(140, 160);
-                    changedParams.colorG = random(235, 255);
+                    changedParams.colorR = p5sketch.random(140, 160);
+                    changedParams.colorG = p5sketch.random(235, 255);
                     changedParams.colorB = 0;
                     break;
                 case 5:
                     changedParams.pos = 70;
                     changedParams.radius = 55;
                     changedParams.alphaStep = 1;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //violet
-                    changedParams.colorR = random(170, 190);
+                    changedParams.colorR = p5sketch.random(170, 190);
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(150, 170);
+                    changedParams.colorB = p5sketch.random(150, 170);
                     break;
                 case 6:
                     changedParams.pos = 50;
                     changedParams.radius = 44;
                     changedParams.alphaStep = 3;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //blau
-                    changedParams.colorR = random(60, 80);
-                    changedParams.colorG = random(210, 230);
+                    changedParams.colorR = p5sketch.random(60, 80);
+                    changedParams.colorG = p5sketch.random(210, 230);
                     changedParams.colorB = 255;
                     break;
             }
@@ -347,32 +352,32 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                 case 1:
                     changedParams.pos = 135;
                     changedParams.distance = 0.3;
-                    blendMode(DODGE)
+                    p5sketch.blendMode(p5sketch.DODGE)
                     break;
                 case 2:
                     changedParams.pos = 115;
                     changedParams.distance = 0.27;
-                    blendMode(OVERLAY)
+                    p5sketch.blendMode(p5sketch.OVERLAY)
                     break;
                 case 3:
                     changedParams.pos = 95;
                     changedParams.distance = 0.24;
-                    blendMode(OVERLAY)
+                    p5sketch.blendMode(p5sketch.OVERLAY)
                     break;
                 case 4:
                     changedParams.pos = 75;
                     changedParams.distance = 0.21;
-                    blendMode(EXCLUSION)
+                    p5sketch.blendMode(p5sketch.EXCLUSION)
                     break;
                 case 5:
                     changedParams.pos = 55;
                     changedParams.distance = 0.18;
-                    blendMode(MULTIPLY)
+                    p5sketch.blendMode(p5sketch.MULTIPLY)
                     break;
                 case 6:
                     changedParams.pos = 35;
                     changedParams.distance = 0.15;
-                    blendMode(BURN)
+                    p5sketch.blendMode(p5sketch.BURN)
                     break;
             }
             break;
@@ -383,24 +388,24 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.pos = 125;
                     changedParams.radius = 110;
                     changedParams.alphaStep = 3;
-                    blendMode(DIFFERENCE);
+                    p5sketch.blendMode(p5sketch.DIFFERENCE);
                     break;
                 case 5:
                     changedParams.pos = 50;
                     changedParams.radius = 60;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
                     break;
                 case 1:
                     changedParams.pos = 145;
                     changedParams.radius = 130;
                     changedParams.alphaStep = 3;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
                     break;
                 case 6:
                     changedParams.pos = 40
                     changedParams.radius = 40;
                     changedParams.alphaStep = 3;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
                     break;
             }
             break;
@@ -411,61 +416,61 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                 case 1:
                     changedParams.pos = 160;
                     changedParams.npoints = 50;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //rot
-                    changedParams.colorG = random(20, 40);
-                    changedParams.colorB = random(30, 50);
-                    changedParams.colorR = random(235, 255);
+                    changedParams.colorG = p5sketch.random(20, 40);
+                    changedParams.colorB = p5sketch.random(30, 50);
+                    changedParams.colorR = p5sketch.random(235, 255);
                     break;
                 case 2:
                     changedParams.pos = 135;
                     changedParams.npoints = 15;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //pink
-                    changedParams.colorR = random(180, 200);
+                    changedParams.colorR = p5sketch.random(180, 200);
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(80, 100);
+                    changedParams.colorB = p5sketch.random(80, 100);
                     break;
                 case 3:
                     changedParams.pos = 110;
                     changedParams.npoints = 10;
-                    blendMode(BURN);
+                    p5sketch.blendMode(p5sketch.BURN);
 
                     //gelb
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(235, 255);
-                    changedParams.colorG = random(220, 240);
+                    changedParams.colorR = p5sketch.random(235, 255);
+                    changedParams.colorG = p5sketch.random(220, 240);
                     break;
                 case 4:
                     changedParams.pos = 85;
                     changedParams.npoints = 8;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
 
                     //grün
-                    changedParams.colorG = random(230, 250);
+                    changedParams.colorG = p5sketch.random(230, 250);
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(100, 120);
+                    changedParams.colorR = p5sketch.random(100, 120);
                     break;
                 case 5:
                     changedParams.pos = 60;
                     changedParams.npoints = 5;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //violet
-                    changedParams.colorR = random(170, 190);
+                    changedParams.colorR = p5sketch.random(170, 190);
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(150, 170);
+                    changedParams.colorB = p5sketch.random(150, 170);
                     break;
                 case 6:
                     changedParams.pos = 35;
                     changedParams.npoints = 3;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //blau
-                    changedParams.colorG = random(150, 170);
-                    changedParams.colorB = random(230, 250);
+                    changedParams.colorG = p5sketch.random(150, 170);
+                    changedParams.colorB = p5sketch.random(230, 250);
                     changedParams.colorR = 0;
                     break;
             }
@@ -475,7 +480,7 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
             changedParams.colorG = 255;
             changedParams.colorR = 255;
             changedParams.colorB = 255;
-            blendMode(BLEND);
+            p5sketch.blendMode(p5sketch.BLEND);
 
             switch (answerNumber) // 0 - 4 oder 6
             {
@@ -515,41 +520,41 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                 case 1:
                     changedParams.pos = 133;
                     changedParams.radius = 110;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
 
                     //rot
-                    changedParams.colorG = random(20, 40);
-                    changedParams.colorB = random(30, 50);
-                    changedParams.colorR = random(235, 255);
+                    changedParams.colorG = p5sketch.random(20, 40);
+                    changedParams.colorB = p5sketch.random(30, 50);
+                    changedParams.colorR = p5sketch.random(235, 255);
                     break;
                 case 2:
                     changedParams.pos = 118;
                     changedParams.radius = 100;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //gelb
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(235, 255);
-                    changedParams.colorG = random(220, 240);
+                    changedParams.colorR = p5sketch.random(235, 255);
+                    changedParams.colorG = p5sketch.random(220, 240);
                     break;
                 case 5:
                     changedParams.pos = 55;
                     changedParams.radius = 50;
-                    blendMode(EXCLUSION)
+                    p5sketch.blendMode(p5sketch.EXCLUSION)
 
                     //grün
-                    changedParams.colorG = random(230, 250);
+                    changedParams.colorG = p5sketch.random(230, 250);
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(100, 120);
+                    changedParams.colorR = p5sketch.random(100, 120);
                     break;
                 case 6:
                     changedParams.pos = 44;
                     changedParams.radius = 40;
-                    blendMode(MULTIPLY)
+                    p5sketch.blendMode(p5sketch.MULTIPLY)
 
                     //blau
-                    changedParams.colorG = random(150, 170);
-                    changedParams.colorB = random(230, 250);
+                    changedParams.colorG = p5sketch.random(150, 170);
+                    changedParams.colorB = p5sketch.random(230, 250);
                     changedParams.colorR = 0;
                     break;
             }
@@ -562,45 +567,45 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.pos = 44;
                     changedParams.radius = 40;
                     changedParams.npoints = 3;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //blau
-                    changedParams.colorG = random(150, 170);
-                    changedParams.colorB = random(230, 250);
+                    changedParams.colorG = p5sketch.random(150, 170);
+                    changedParams.colorB = p5sketch.random(230, 250);
                     changedParams.colorR = 0;
                     break;
                 case 1:
                     changedParams.pos = 122;
                     changedParams.radius = 80;
                     changedParams.npoints = 50;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //rot
-                    changedParams.colorG = random(20, 40);
-                    changedParams.colorB = random(30, 50);
-                    changedParams.colorR = random(235, 255);
+                    changedParams.colorG = p5sketch.random(20, 40);
+                    changedParams.colorB = p5sketch.random(30, 50);
+                    changedParams.colorR = p5sketch.random(235, 255);
                     break;
                 case 5:
                     changedParams.pos = 55;
                     changedParams.radius = 50;
                     changedParams.npoints = 6;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
 
                     //grün
-                    changedParams.colorG = random(230, 250);
+                    changedParams.colorG = p5sketch.random(230, 250);
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(100, 120);
+                    changedParams.colorR = p5sketch.random(100, 120);
                     break;
                 case 2:
                     changedParams.pos = 100;
                     changedParams.radius = 70;
                     changedParams.npoints = 20;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
 
                     //gelb
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(235, 255);
-                    changedParams.colorG = random(220, 240);
+                    changedParams.colorR = p5sketch.random(235, 255);
+                    changedParams.colorG = p5sketch.random(220, 240);
                     break;
             }
             break;
@@ -612,63 +617,63 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.pos = 60;
                     changedParams.radius = 30;
                     changedParams.alphaStep = 3;
-                    blendMode(BURN);
+                    p5sketch.blendMode(p5sketch.BURN);
 
                     //blau
                     changedParams.colorR = 0;
-                    changedParams.colorG = random(170, 190);
-                    changedParams.colorB = random(230, 250);
+                    changedParams.colorG = p5sketch.random(170, 190);
+                    changedParams.colorB = p5sketch.random(230, 250);
                     break;
                 case 2:
                     changedParams.pos = 75;
                     changedParams.radius = 40;
-                    blendMode(BURN);
+                    p5sketch.blendMode(p5sketch.BURN);
 
                     //violet
-                    changedParams.colorR = random(170, 190);
+                    changedParams.colorR = p5sketch.random(170, 190);
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(150, 170);
+                    changedParams.colorB = p5sketch.random(150, 170);
                     break;
                 case 3:
                     changedParams.pos = 90;
                     changedParams.radius = 50;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
 
                     //grün
-                    changedParams.colorG = random(230, 250);
+                    changedParams.colorG = p5sketch.random(230, 250);
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(100, 120);
+                    changedParams.colorR = p5sketch.random(100, 120);
                     break;
                 case 4:
                     changedParams.pos = 105;
                     changedParams.radius = 80;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
 
                     //gelb
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(235, 255);
-                    changedParams.colorG = random(220, 240);
+                    changedParams.colorR = p5sketch.random(235, 255);
+                    changedParams.colorG = p5sketch.random(220, 240);
                     break;
                 case 5:
                     changedParams.pos = 115;
                     changedParams.radius = 90;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
 
                     //pink
-                    changedParams.colorR = random(180, 200);
+                    changedParams.colorR = p5sketch.random(180, 200);
                     changedParams.colorG = 0;
-                    changedParams.colorB = random(80, 100);
+                    changedParams.colorB = p5sketch.random(80, 100);
                     break;
                 case 6:
                     changedParams.pos = 135;
                     changedParams.radius = 100;
                     changedParams.alphaStep = 3;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //rot
-                    changedParams.colorG = random(20, 40);
-                    changedParams.colorB = random(30, 50);
-                    changedParams.colorR = random(235, 255);
+                    changedParams.colorG = p5sketch.random(20, 40);
+                    changedParams.colorB = p5sketch.random(30, 50);
+                    changedParams.colorR = p5sketch.random(235, 255);
                     break;
             }
             break;
@@ -680,42 +685,42 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.radius = 110;
                     changedParams.distance = 0.3;
                     changedParams.alphaStep = 3;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
                     break;
                 case 2:
                     changedParams.pos = 115;
                     changedParams.radius = 100;
                     changedParams.distance = 0.27;
                     changedParams.alphaStep = 3;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
                     break;
                 case 3:
                     changedParams.pos = 95;
                     changedParams.radius = 90;
                     changedParams.distance = 0.24;
                     changedParams.alphaStep = 1;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
                     break;
                 case 4:
                     changedParams.pos = 75;
                     changedParams.radius = 70;
                     changedParams.distance = 0.21;
                     changedParams.alphaStep = 1;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
                     break;
                 case 5:
                     changedParams.pos = 55;
                     changedParams.radius = 50;
                     changedParams.distance = 0.18;
                     changedParams.alphaStep = 2.5;
-                    blendMode(DIFFERENCE);
+                    p5sketch.blendMode(p5sketch.DIFFERENCE);
                     break;
                 case 6:
                     changedParams.pos = 35;
                     changedParams.radius = 30;
                     changedParams.distance = 0.15;
                     changedParams.alphaStep = 3;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
                     break;
             }
             break;
@@ -728,47 +733,47 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.radius = 115;
                     changedParams.distance = 0.3;
                     changedParams.alphaStep = 3;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
                     break;
                 case 2:
                     changedParams.pos = 112;
                     changedParams.radius = 105;
                     changedParams.distance = 0.27;
                     changedParams.alphaStep = 3;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
                     break;
                 case 3:
                     changedParams.pos = 102;
                     changedParams.radius = 95;
                     changedParams.distance = 0.24;
                     changedParams.alphaStep = 1;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
                     break;
                 case 4:
                     changedParams.pos = 82;
                     changedParams.radius = 65;
                     changedParams.distance = 0.21;
                     changedParams.alphaStep = 1;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
                     break;
                 case 5:
                     changedParams.pos = 62;
                     changedParams.radius = 55;
                     changedParams.distance = 0.18;
                     changedParams.alphaStep = 2.5;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
                     break;
                 case 6:
                     changedParams.pos = 50;
                     changedParams.radius = 45;
                     changedParams.distance = 0.15;
                     changedParams.alphaStep = 2.5;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
                     break;
             }
             break;
         case 12:
-            blendMode(BLEND);
+            p5sketch.blendMode(p5sketch.BLEND);
             switch (answerNumber) // 0 - 4 oder 6
             {
                 case 1:
@@ -808,56 +813,56 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
             {
                 case 1:
                     changedParams.pos = 128;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
 
                     //rot
-                    changedParams.colorG = random(20, 40);
-                    changedParams.colorB = random(30, 50);
-                    changedParams.colorR = random(200, 220);
+                    changedParams.colorG = p5sketch.random(20, 40);
+                    changedParams.colorB = p5sketch.random(30, 50);
+                    changedParams.colorR = p5sketch.random(200, 220);
                     break;
                 case 2:
                     changedParams.pos = 108;
-                    blendMode(EXCLUSION);
+                    p5sketch.blendMode(p5sketch.EXCLUSION);
 
                     //pink
                     changedParams.colorG = 0;
-                    changedParams.colorR = random(230, 250);
-                    changedParams.colorB = random(80, 100);
+                    changedParams.colorR = p5sketch.random(230, 250);
+                    changedParams.colorB = p5sketch.random(80, 100);
                     break;
                 case 3:
                     changedParams.pos = 88;
-                    blendMode(BURN);
+                    p5sketch.blendMode(p5sketch.BURN);
 
                     //gelb
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(235, 255);
-                    changedParams.colorG = random(200, 220);
+                    changedParams.colorR = p5sketch.random(235, 255);
+                    changedParams.colorG = p5sketch.random(200, 220);
                     break;
                 case 4:
                     changedParams.pos = 68;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //grün
-                    changedParams.colorG = random(210, 230);
+                    changedParams.colorG = p5sketch.random(210, 230);
                     changedParams.colorB = 0;
-                    changedParams.colorR = random(120, 140);
+                    changedParams.colorR = p5sketch.random(120, 140);
                     break;
                 case 5:
                     changedParams.pos = 48;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
 
                     //violet
-                    changedParams.colorR = random(100, 120);
-                    changedParams.colorG = random(30, 50);
-                    changedParams.colorB = random(100, 120);
+                    changedParams.colorR = p5sketch.random(100, 120);
+                    changedParams.colorG = p5sketch.random(30, 50);
+                    changedParams.colorB = p5sketch.random(100, 120);
                     break;
                 case 6:
                     changedParams.pos = 28;
-                    blendMode(DODGE);
+                    p5sketch.blendMode(p5sketch.DODGE);
 
                     //blau
-                    changedParams.colorG = random(170, 190);
-                    changedParams.colorB = random(230, 250);
+                    changedParams.colorG = p5sketch.random(170, 190);
+                    changedParams.colorB = p5sketch.random(230, 250);
                     changedParams.colorR = 0;
                     break;
             }
@@ -870,25 +875,25 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
                     changedParams.radius = 100;
                     changedParams.distance = 0.3;
                     changedParams.alphaStep = 3;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
                     break;
                 case 2:
                     changedParams.pos = 110;
                     changedParams.radius = 90;
                     changedParams.distance = 0.25;
-                    blendMode(OVERLAY);
+                    p5sketch.blendMode(p5sketch.OVERLAY);
                     break;
                 case 5:
                     changedParams.pos = 64;
                     changedParams.radius = 50;
                     changedParams.distance = 0.15;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
                     break;
                 case 6:
                     changedParams.pos = 44;
                     changedParams.radius = 40;
                     changedParams.distance = 0.1;
-                    blendMode(MULTIPLY);
+                    p5sketch.blendMode(p5sketch.MULTIPLY);
                     break;
             }
             break;

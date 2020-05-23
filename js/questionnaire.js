@@ -1,16 +1,4 @@
-// socket stuff
-let ip = "192.168.1.105"; // laura's ip-adresse
-
-var socket = io(ip + ':3000'); //IP-Adresse WLAN
-socket.on('connect', function() {
-    console.log("connected");
-});
-socket.on('event', function(data) {
-    console.log("event triggered");
-});
-socket.on('disconnect', function() {
-    console.log("disconnected");
-});
+"use strict"
 
 //progress-bar shizzl
 let getProgressbar = document.getElementsByClassName("progressBar");
@@ -64,16 +52,16 @@ questionSwitch.forEach(function(questionBox, index, arr) {
 });
 
 //reload all content
-document.addEventListener("DOMContentLoaded", function() {
-    socket.emit('answers', 0);
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     socket.emit('answers', 0);
+// });
 
 
 //start-button on homescreen
 document.getElementById("start").addEventListener("click", function() {
     setTimeout(function() {
         //startCounter();
-        socket.emit('answers', 0);
+        // socket.emit('answers', 0);
         questionBox1.style.display = "block";
         homescreen.style.display = "none";
 
@@ -104,34 +92,32 @@ function resetCSS() {
 }
 
 //restart-button on last page
-document.getElementById("backto").addEventListener("click", function() {
-    setTimeout(function() {
-        socket.emit('answers', -1);
-        homescreen.style.display = "block";
-        questionBox15.style.display = "none";
-        resetCSS();
-    }, 500);
-    backto.className = "endButton activeEnd";
-})
+// document.getElementById("backto").addEventListener("click", function() {
+//     setTimeout(function() {
+//         homescreen.style.display = "block";
+//         questionBox15.style.display = "none";
+//         resetCSS();
+//     }, 500);
+//     backto.className = "endButton activeEnd";
+// })
 
 //print-button switch to screen active print
-document.getElementById("drucken").addEventListener("click", function() {
-    setTimeout(function() {
-        socket.emit('answers', -2);
-        questionBox15.style.display = "none";
-        printBox.style.display = "block";
-        resetButton.style.display = "none";
-        resetCSS();
-    }, 500);
-    drucken.className = "printButton activeEnd";
+// document.getElementById("drucken").addEventListener("click", function() {
+//     setTimeout(function() {
+//         questionBox15.style.display = "none";
+//         printBox.style.display = "block";
+//         resetButton.style.display = "none";
+//         resetCSS();
+//     }, 500);
+//     drucken.className = "printButton activeEnd";
 
-    //go back to homescreen after printing
-    setTimeout(backToStart, 70 * 1000);
-})
+//     //go back to homescreen after printing
+//     setTimeout(backToStart, 70 * 1000);
+// })
 
 //back to start from print-window
 function backToStart() {
-    socket.emit('answers', -1);
+    // socket.emit('answers', -1);
     printBox.style.display = "none";
     homescreen.style.display = "block";
 }

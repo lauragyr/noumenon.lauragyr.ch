@@ -188,16 +188,15 @@ li {
 
 #sketch {
     box-shadow: 2px 2px 30px var(--light-grey);
-    /* background-color: blue; */
     height: 500px;
     margin: auto 0;
+    ;
 }
 
 
 /*sketch animation for the end */
 
-
-/*.rotation {
+.rotation {
     animation: spin 40s ease-in-out infinite;
 }
 
@@ -207,7 +206,16 @@ li {
         transform: rotate(360deg);
     }
 }
-*/
+
+
+/* explanation */
+
+.explanation {
+    display: block;
+    height: 80vh;
+    margin: auto;
+    padding-top: 50px;
+}
 
 
 /* collection */

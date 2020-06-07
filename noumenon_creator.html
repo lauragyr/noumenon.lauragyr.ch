@@ -21,6 +21,7 @@
         <ul>
             <li><a class="header-link" href="index.html">about</a></li>
             <li><a class="header-link" id="active" href="noumenon_creator.html">create</a></li>
+            <li><a class="header-link" href="noumenon_explanation.html">explanation</a></li>
             <li><a class="header-link" href="00_noumenon_collection-overview.html">collection</a></li>
             <li><a class="header-link" href="contact.html">contact</a></li>
         </ul>
@@ -452,7 +453,6 @@
     <script src="js/answerSwitch.js"></script>
     <script src="js/questionnaire.js"></script>
     <script language="javascript" src="p5/sketch.js"></script>
-    <!--<script language="javascript" src="p5/test-p5.js"></script>-->
 
     <script>
         // connect sketch-id in questionnaire with p5-canvas
@@ -460,6 +460,7 @@
             p.setup = setupCanvas,
                 p.draw = drawNoumenon
         };
+
         let p5sketch = new p5(sketch, document.getElementById('sketch'));
     </script>
 </body>

@@ -52,9 +52,9 @@ questionSwitch.forEach(function(questionBox, index, arr) {
 });
 
 //reload all content
-// document.addEventListener("DOMContentLoaded", function() {
-//     socket.emit('answers', 0);
-// });
+/*document.addEventListener("DOMContentLoaded", function() {
+    socket.emit('answers', 0);
+});*/
 
 
 //start-button on homescreen
@@ -64,6 +64,7 @@ document.getElementById("start").addEventListener("click", function() {
         // socket.emit('answers', 0);
         questionBox1.style.display = "block";
         homescreen.style.display = "none";
+
 
         //progressBar display
         window.progressWidth = 0;

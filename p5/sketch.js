@@ -34,8 +34,7 @@ resetAllParameters();
 
 
 
-function setupCanvas()
-{
+function setupCanvas() {
     this.createCanvas(500, 500);
     console.log("joo");
     //numbers for visuals on startscreen
@@ -85,7 +84,6 @@ function drawNoumenon() {
     p5sketch.scale(1);
     pullData();
 
-    // console.log("survedata0 " + surveyData[0]);
 
     //clearing canvas after generating visual – click on start button
     if (surveyData[0] === 0) {
@@ -199,10 +197,9 @@ function visualize() {
         return;
     }
 
-    document.body.style.background = possibleParameters.bgColor;
+    document.getElementById("sketch").style.background = possibleParameters.bgColor;
 
-    p5sketch.fill
-    (
+    p5sketch.fill(
         possibleParameters.colorR,
         possibleParameters.colorG,
         possibleParameters.colorB,
@@ -211,12 +208,12 @@ function visualize() {
     p5sketch.rotate(possibleParameters.generalAngle);
 
     polygon
-    (
-        possibleParameters.pos,
-        possibleParameters.pos,
-        possibleParameters.radius,
-        possibleParameters.npoints
-    );
+        (
+            possibleParameters.pos,
+            possibleParameters.pos,
+            possibleParameters.radius,
+            possibleParameters.npoints
+        );
 }
 
 function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {

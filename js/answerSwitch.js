@@ -865,17 +865,46 @@ function setQ14Value(value) {
 
 function setAnswers()
 {
-    currentAnswerSwitchData[1] = a1;
-    currentAnswerSwitchData[2] = a2;
-    currentAnswerSwitchData[3] = a3;
-    currentAnswerSwitchData[4] = a4;
-    currentAnswerSwitchData[5] = a5;
-    currentAnswerSwitchData[6] = a6;
-    currentAnswerSwitchData[7] = a7;
-    currentAnswerSwitchData[8] = a8;
-    currentAnswerSwitchData[9] = a9;
-    currentAnswerSwitchData[10] = a10;
-    currentAnswerSwitchData[11] = a11;
-    currentAnswerSwitchData[12] = a12;
-    currentAnswerSwitchData[13] = a13;
+    if (typeof a1 != 'undefined') {
+        currentAnswerSwitchData[0] = a1;
+    }
+    if (typeof a2 != 'undefined') {
+        currentAnswerSwitchData[1] = a2;
+    }
+    if (typeof a3 != 'undefined') {
+        currentAnswerSwitchData[2] = a3;
+    }
+    if (typeof a4 != 'undefined') {
+        currentAnswerSwitchData[3] = a4;
+    }
+    if (typeof a5 != 'undefined') {
+        currentAnswerSwitchData[4] = a5;
+    }
+    if (typeof a6 != 'undefined') {
+        currentAnswerSwitchData[5] = a6;
+    }
+    if (typeof a7 != 'undefined') {
+        currentAnswerSwitchData[6] = a7;
+    }
+    if (typeof a8 != 'undefined') {
+        currentAnswerSwitchData[7] = a8;
+    }
+    if (typeof a9 != 'undefined') {
+        currentAnswerSwitchData[8] = a9;
+    }
+    if (typeof a10 != 'undefined') {
+        currentAnswerSwitchData[9] = a10;
+    }
+    if (typeof a11 != 'undefined') {
+        currentAnswerSwitchData[10] = a11;
+    }
+    if (typeof a12 != 'undefined') {
+        currentAnswerSwitchData[11] = a12;
+    }
+    if (typeof a13 != 'undefined') {
+        currentAnswerSwitchData[12] = a13;
+    }
+    if (typeof a14 != 'undefined') {
+        currentAnswerSwitchData[13] = a14;
+    }
 }

@@ -60,8 +60,6 @@ questionSwitch.forEach(function(questionBox, index, arr) {
 //start-button on homescreen
 document.getElementById("start").addEventListener("click", function() {
     setTimeout(function() {
-        //startCounter();
-        // socket.emit('answers', 0);
         questionBox1.style.display = "block";
         homescreen.style.display = "none";
 
@@ -119,6 +117,7 @@ function resetCSS() {
 //back to start from print-window
 function backToStart() {
     // socket.emit('answers', -1);
+    currentAnswerSwitchData = [-1];
     printBox.style.display = "none";
     homescreen.style.display = "block";
 }

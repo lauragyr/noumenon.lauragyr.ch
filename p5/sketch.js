@@ -36,7 +36,8 @@ resetAllParameters();
 
 function setupCanvas() {
     this.createCanvas(500, 500);
-    console.log("joo");
+    p5sketch.frameRate(3);
+    p5sketch.strokeWeight(0);
     //numbers for visuals on startscreen
     /*var today = new Date();
     let labelingNoumenon = document.getElementById("notDetectedBox");
@@ -78,8 +79,11 @@ function pullData() {
     ];
 }
 
+function clear() {
+    // canvas clear
+}
+
 function drawNoumenon() {
-    p5sketch.frameRate(3);
     p5sketch.translate(p5sketch.width / 2, p5sketch.height / 2);
     p5sketch.scale(1);
     pullData();
@@ -149,7 +153,7 @@ function overwriteEachAnswer() {
     surveyData.forEach(
         function handleAnswers(value, index, array) {
             if (typeof(value) != "undefined") {
-                console.log("surveyNumber" + index + "answer:" + value);
+                // console.log("surveyNumber" + index + "answer:" + value);
                 changeValuesBasedOnSurvey(index, value);
             }
         }
@@ -222,7 +226,7 @@ function changeValuesBasedOnSurvey(surveyNumber, answerNumber) {
     switch (surveyNumber + 1) // 1 - 17
     {
         case 1:
-            p5sketch.p5sketch.blendMode(p5sketch.BLEND);
+            p5sketch.blendMode(p5sketch.BLEND);
             switch (answerNumber) // 1 - 4 oder 6
             {
                 case 6:

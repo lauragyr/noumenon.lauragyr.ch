@@ -1,11 +1,11 @@
 @font-face {
     font-family: Silka Light;
-    src: url("assets/fonts/silka-light-webfont.woff");
+    src: url("../assets/fonts/silka-light-webfont.woff");
 }
 
 @font-face {
     font-family: Silka Medium;
-    src: url("assets/fonts/silka-silka-medium-webfont.woff");
+    src: url("../assets/fonts/silka-medium-webfont.ttf");
 }
 
 

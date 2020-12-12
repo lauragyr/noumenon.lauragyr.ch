@@ -149,7 +149,7 @@ function overwriteEachAnswer() {
     surveyData.forEach(
         function handleAnswers(value, index, array) {
             if (typeof(value) != "undefined") {
-                console.log("surveyNumber " + index + " answer: " + value);
+                console.log("surveyNumber" + index + "answer:" + value);
                 changeValuesBasedOnSurvey(index, value);
             }
         }

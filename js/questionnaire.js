@@ -86,14 +86,25 @@ document.getElementById("restart").addEventListener("click", function() {
     start.className = "button activeButton";
 })
 
+// save elements to local download folder
 document.getElementById("save").addEventListener("click", function() {
-    //currentAnswerSwitchData = [0];
-    //questionBox1.style.display = "block";
-    /*questionBox15.style.display = "none";*/
-    //let img = createImate(500, 500);
-    //img.copy(p5sketch, 0, 0, 500, 500, 0, 0, 500, 500);
-    //img.saveCanvas()
-    p5sketch.saveCanvas('noumenon', 'png');
+    currentAnswerSwitchData = [0];
+    endScreen.style.display = "block";
+    questionBox15.style.display = "none";
+
+    //set date for noumenon naming
+    var today = new Date();
+    let options = {
+        year: "2-digit",
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    }
+    let name = "noumenon_" + today.toLocaleString("de-DE", options);
+    let dateName = name.replace(/[\. ,:-]+/g, "");
+    p5sketch.saveCanvas(dateName, 'png');
 
 
     //progressBar display

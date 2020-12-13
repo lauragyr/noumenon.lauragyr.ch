@@ -41,20 +41,6 @@ function setupCanvas() {
     this.createCanvas(500, 500);
     p5sketch.frameRate(3);
     p5sketch.strokeWeight(0);
-    //numbers for visuals on startscreen
-    /*var today = new Date();
-    let labelingNoumenon = document.getElementById("notDetectedBox");
-    let options = {
-        year: "2-digit",
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
-    }
-    let name = "Das ist Noumenon<br>" + today.toLocaleString("de-DE", options);
-    nameNew = name.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-    labelingNoumenon.innerHTML = nameNew;*/
 }
 
 // which one is the last object

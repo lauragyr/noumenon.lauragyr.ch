@@ -235,6 +235,7 @@ li {
 
 .teaser-wrapper img {
     transform: rotate(0deg) scale(1);
+    transition: transform 1s;
 }
 
 .teaser-wrapper img:hover {

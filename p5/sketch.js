@@ -8,6 +8,8 @@ let surveyData = [];
 //parameter-stuff
 let possibleParameters;
 let lastQuestionAnswered = false;
+let timeoutControl;
+let rotationControl;
 window.printed = false;
 
 
@@ -29,6 +31,7 @@ function resetAllParameters() {
         alphaStep: 1
     }
     lastQuestionAnswered = false;
+    console.log(lastQuestionAnswered);
 }
 resetAllParameters();
 
@@ -80,12 +83,18 @@ function pullData() {
 }
 
 function clear() {
-    // canvas clear
+    window.clearTimeout(timeoutControl);
+    timeoutControl = undefined;
+    window.clearTimeout(rotationControl);
+    rotationControl = undefined;
+    p5sketch.clear();
+    resetAnswers();
+    resetAllParameters();
 }
 
 function drawNoumenon() {
     p5sketch.translate(p5sketch.width / 2, p5sketch.height / 2);
-    p5sketch.scale(1);
+    p5sketch.scale(0.7);
     pullData();
 
 
@@ -94,18 +103,26 @@ function drawNoumenon() {
         window.printed = false
         defaultCanvas0.classList.remove("rotation");
 
-        resetAllParameters();
-        return clear();
+        clear();
+        return;
     }
 
     //when qustionnaire is done and goes back to start
-    if (surveyData[0] === -1) {
-        window.printed = false
-        document.getElementById('defaultCanvas0');
-        defaultCanvas0.classList.add("rotation");
+    if (currentAnswerSwitchData.length === (14)) {
+        if (rotationControl === undefined) {
+            rotationControl = window.setTimeout(() => {
+                window.printed = false
+                document.getElementById('defaultCanvas0');
+                defaultCanvas0.classList.add("rotation");
+            }, 5000);
+        }
 
-        resetAllParameters();
-        return;
+        p5sketch.copy(0, 500, 500, 500, 0, 50, 50, 50);
+
+
+        //resetAllParameters();
+        //clear();
+        //return;
     }
 
     //writing png and printing functions.
@@ -123,10 +140,11 @@ function drawNoumenon() {
 
     //stop drawing after last question with 5 sec. interval
     if (surveyData[13] != undefined) {
-        setTimeout(function() {
-            lastQuestionAnswered = true;
-        }, 5000);
+        if (timeoutControl === undefined) {
+            timeoutControl = window.setTimeout(() => { lastQuestionAnswered = true; }, 5000);
+        }
     }
+
     overwriteEachAnswer();
     visualize();
 }
@@ -197,6 +215,7 @@ function setParams(obj) {
 }
 
 function visualize() {
+    console.log();
     if (lastQuestionAnswered) {
         return;
     }

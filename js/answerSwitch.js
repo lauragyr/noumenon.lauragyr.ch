@@ -863,8 +863,7 @@ function setQ14Value(value) {
     setAnswers();
 }
 
-function setAnswers()
-{
+function setAnswers() {
     if (typeof a1 != 'undefined') {
         currentAnswerSwitchData[0] = a1;
     }
@@ -907,4 +906,21 @@ function setAnswers()
     if (typeof a14 != 'undefined') {
         currentAnswerSwitchData[13] = a14;
     }
+}
+
+function resetAnswers() {
+    a1 = undefined;
+    a2 = undefined;
+    a3 = undefined;
+    a4 = undefined;
+    a5 = undefined;
+    a6 = undefined;
+    a7 = undefined;
+    a8 = undefined;
+    a9 = undefined;
+    a10 = undefined;
+    a11 = undefined;
+    a12 = undefined;
+    a13 = undefined;
+    a14 = undefined;
 }

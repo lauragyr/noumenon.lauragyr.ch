@@ -41,7 +41,6 @@ questionSwitch.forEach(function(questionBox, index, arr) {
 
                     //remove resetButton  and progressBar if questionBox15 is displayed
                     if (questionSwitch[14].style.display == 'block') {
-                        resetButton.style.display = "none";
                         barContainer.style.display = "none";
                     }
                 }, 500);
@@ -71,6 +70,39 @@ document.getElementById("start").addEventListener("click", function() {
     }, 500);
     start.className = "button activeButton";
 })
+
+//restart-button on homescreen
+document.getElementById("restart").addEventListener("click", function() {
+    currentAnswerSwitchData = [0];
+    console.log(currentAnswerSwitchData);
+    questionBox1.style.display = "block";
+    questionBox15.style.display = "none";
+
+
+    //progressBar display
+    window.progressWidth = 0;
+    progressBar.style.width = window.progressWidth + '%';
+    resetCSS();
+    start.className = "button activeButton";
+})
+
+document.getElementById("save").addEventListener("click", function() {
+    //currentAnswerSwitchData = [0];
+    //questionBox1.style.display = "block";
+    /*questionBox15.style.display = "none";*/
+    //let img = createImate(500, 500);
+    //img.copy(p5sketch, 0, 0, 500, 500, 0, 0, 500, 500);
+    //img.saveCanvas()
+    p5sketch.saveCanvas('noumenon', 'png');
+
+
+    //progressBar display
+    window.progressWidth = 0;
+    progressBar.style.width = window.progressWidth + '%';
+    resetCSS();
+    start.className = "button activeButton";
+})
+
 
 //remove all added classes from elements for active
 function resetCSS() {

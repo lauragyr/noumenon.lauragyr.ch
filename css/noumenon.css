@@ -32,6 +32,12 @@
     color: var(--black);
 }
 
+h1 {
+    font-family: Silka Light;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
 h2 {
     font-family: Silka Light;
     font-size: 40px;
@@ -60,6 +66,22 @@ p {
 a {
     text-decoration: none;
     color: var(--black);
+}
+
+.beta {
+    background-color: var(--primary);
+    width: 140px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 8px 0px 0px 0px;
+}
+
+.beta p {
+    color: var(--white);
+    font-size: 16px;
+    font-family: Silka Medium;
 }
 
 
@@ -171,18 +193,19 @@ li {
 
 .info h5 {
     padding-top: 30px;
-    width: 80%;
+    width: 60%;
 }
 
 #questionnaire {
     height: 500px;
     width: 500px;
+    padding: 50px 30px 30px 0px;
 }
 
 #creation-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 0px;
     height: 60vh;
 }
 
@@ -221,9 +244,6 @@ li {
 /* collection */
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
     padding: 0 7%;
 }
 
@@ -246,10 +266,6 @@ li {
 .teaser-wrapper:hover {
     color: #51D3FB;
     transition: color 0.5s;
-}
-
-.column {
-    flex-direction: column;
 }
 
 .noumenon {
@@ -312,4 +328,26 @@ li {
 #website>a:hover {
     color: var(--primary);
     transition: color 0.5s;
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 1024px) {
+    #creation-container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .info {
+        padding-top: 20px;
+        width: 100%;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .info h5 {
+        width: 100%;
+    }
+    h5 {}
 }

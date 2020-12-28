@@ -84,6 +84,15 @@ function drawNoumenon() {
     pullData();
 
 
+    /*if (window.innerWidth < 1024) {
+        p5sketch.scale(0.5);
+        p5sketch.createCanvas(300, 300);
+    } else {
+        p5sketch.scale(0.8);
+        p5sketch.createCanvas(500, 500);
+    }*/
+
+
     //clearing canvas after generating visual – click on start button
     if (surveyData[0] === 0) {
         window.printed = false

@@ -274,6 +274,8 @@ li {
 
 .overview {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .overview h3 {
@@ -381,5 +383,34 @@ li {
     }
     #sketch {
         margin: 0;
+    }
+}
+
+@media only screen and (max-width: 678px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact img {
+        width: 50vw;
+        margin: 0 auto;
+        transform: translateY(-50px);
+    }
+    .intro {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .box {
+        width: 100%;
+    }
+    .home p {
+        width: 100%;
+    }
+    .bg {
+        width: 90%;
+    }
+    .explanation {
+        width: 80vw;
+        height: auto;
     }
 }

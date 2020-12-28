@@ -68,6 +68,9 @@ a {
     color: var(--black);
 }
 
+
+/* BETA */
+
 .beta {
     background-color: var(--primary);
     width: 140px;
@@ -76,12 +79,34 @@ a {
     right: 0;
     text-align: center;
     border-radius: 8px 0px 0px 0px;
+    padding: 5px;
 }
 
-.beta p {
+.beta a {
     color: var(--white);
     font-size: 16px;
     font-family: Silka Medium;
+}
+
+.beta-info {
+    padding-top: 20vh;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.beta-info a {
+    font-family: Silka Medium;
+    color: var(--primary);
+    font-size: 18px;
+    transition: color .2s;
+}
+
+.beta-info a:hover {
+    color: var(--dark-grey);
+}
+
+.beta-info>div {
+    margin-top: 30px;
 }
 
 
@@ -247,6 +272,10 @@ li {
     padding: 0 7%;
 }
 
+.overview {
+    display: flex;
+}
+
 .overview h3 {
     width: 100%;
     text-align: center;
@@ -335,9 +364,10 @@ li {
 
 @media only screen and (max-width: 1024px) {
     #creation-container {
-        margin-top: 50px;
-        display: flex;
+        margin-top: 20px;
         flex-direction: column-reverse;
+        height: 80%;
+        justify-content: initial;
     }
     .info {
         padding-top: 20px;
@@ -349,5 +379,8 @@ li {
     .info h5 {
         width: 100%;
     }
-    h5 {}
+    #sketch {
+        margin: 0;
+    }
+    #questionnaire
 }

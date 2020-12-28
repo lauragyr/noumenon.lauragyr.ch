@@ -215,3 +215,13 @@
         background-color: var(--dark-grey);
         width: 0%;
     }
+    
+    @media only screen and (max-width: 1024px) {
+        .barContainer {
+            margin: 20% 0% 10% 0%;
+        }
+        #questionnaire {
+            width: 100%;
+            padding: 0;
+        }
+    }

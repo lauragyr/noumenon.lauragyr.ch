@@ -37,14 +37,17 @@
             <h2>werkschau hochschule luzern</h2>
         </div>
         <div class="noumenon">
-            <img src="noumenon/2019-06-18T08:14:05.601Z.png" alt="">
-            <img src="noumenon/2019-06-18T08:55:18.989Z.png" alt="">
-            <img src="noumenon/2019-06-18T11:06:02.474Z.png" alt="">
-            <img src="noumenon/2019-06-21T14:16:07.256Z.png" alt="">
-            <img src="noumenon/2019-06-21T16:43:42.884Z.png" alt="">
-            <img src="noumenon/2019-06-22T14:26:04.641Z.png" alt="">
-            <img src="noumenon/2019-06-24T16:58:18.369Z.png" alt="">
-            <img src="noumenon/2019-06-26T14:04:53.498Z.png" alt="">
+        <?php
+    $directory = './noumenon/werkschau-images';
+    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+    echo var_dump($scanned_directory);
+    foreach ($scanned_directory as $key => $value)
+    {
+        echo '<h2>'.$key.' and '.$value.'</h2>';
+        echo '<img src="'.$value.'" alt="" width="400">';
+    }
+    ?>
+ 
         </div>
 
     </div>

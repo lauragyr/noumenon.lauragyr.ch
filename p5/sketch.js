@@ -43,6 +43,7 @@ function setupCanvas() {
     p5sketch.strokeWeight(0);
 }
 
+
 // which one is the last object
 function pullData() {
     if (gegebenAntworten != Object.keys(currentAnswerSwitchData).length) {

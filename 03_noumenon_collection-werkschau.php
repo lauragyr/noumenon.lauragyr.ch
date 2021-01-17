@@ -37,22 +37,22 @@
             <h2>werkschau hochschule luzern</h2>
         </div>
         <div class="noumenon">
-        <?php
-    $directory = './noumenon/werkschau-images';
-    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
-    echo var_dump($scanned_directory);
-    foreach ($scanned_directory as $key => $value)
-    {
-        echo '<h2>'.$key.' and '.$value.'</h2>';
-        echo '<img src="'.$value.'" alt="" width="400">';
-    }
-    ?>
+            <?php
+                $file = "./noumenon/werkschau-images/images.txt";
+                $array = explode("\n", file_get_contents($file));
+                foreach ($array as $key => $value)
+                {
+                    /*echo '<h2>'.$key.' and '.$value.'</h2>';*/
+                    echo '<img src="./noumenon/werkschau-images/'.$value.'" alt="">';
+                }
+            ?>
  
         </div>
 
     </div>
-
-
+    <div id="totop">
+      <a href="#top"></a>
+    </div>
 </body>
 
 </html>

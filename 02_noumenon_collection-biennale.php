@@ -37,14 +37,15 @@
             <h2>design biennale zurich</h2>
         </div>
         <div class="noumenon">
-            <img src="noumenon/2019-06-18T08:14:05.601Z.png" alt="">
-            <img src="noumenon/2019-06-18T08:55:18.989Z.png" alt="">
-            <img src="noumenon/2019-06-18T11:06:02.474Z.png" alt="">
-            <img src="noumenon/2019-06-21T14:16:07.256Z.png" alt="">
-            <img src="noumenon/2019-06-21T16:43:42.884Z.png" alt="">
-            <img src="noumenon/2019-06-22T14:26:04.641Z.png" alt="">
-            <img src="noumenon/2019-06-24T16:58:18.369Z.png" alt="">
-            <img src="noumenon/2019-06-26T14:04:53.498Z.png" alt="">
+            <?php
+                    $file = "./noumenon/biennale-images/images.txt";
+                    $array = explode("\n", file_get_contents($file));
+                    foreach ($array as $key => $value)
+                    {
+                        /*echo '<h2>'.$key.' and '.$value.'</h2>';*/
+                        echo '<img src="./noumenon/biennale-images/'.$value.'" alt="">';
+                    }
+                ?>
         </div>
 
     </div>

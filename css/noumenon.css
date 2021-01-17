@@ -304,6 +304,18 @@ li {
     grid-template-columns: auto auto auto;
 }
 
+#totop {
+    height: 140px;
+    width: 20px;
+    background-color: #FADD02;
+    transform: scale(1.0);
+    transition: transform ease 0.5s;
+}
+
+#totop:hover {
+    transform: scale(1.2);
+}
+
 
 /* navigation / title on collection */
 

@@ -37,10 +37,19 @@
             <h2>online</h2>
         </div>
 
-        <div>
-            <div class="info">
+        <div class="noumenon">
+           <!--<div class="info">
                 <h3>Sorry, this folder is empty for now. There must be a problem with the server.</h3>
-            </div>
+            </div>-->
+            <?php
+                    $file = "./noumenon/online/images.txt";
+                    $array = explode("\n", file_get_contents($file));
+                    foreach ($array as $key => $value)
+                    {
+                        /*echo '<h2>'.$key.' and '.$value.'</h2>';*/
+                        echo '<img src="./noumenon/online/'.$value.'" alt="">';
+                    }
+                ?>
         </div>
 
     </div>

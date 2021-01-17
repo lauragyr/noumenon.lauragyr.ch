@@ -432,10 +432,10 @@
 
                 <div id="questionBox15" style="display:none;">
                     <h3>This is your noumenon.<br>What do you want to do next?</h3>
-                    <div id="restart" class="button">
+                    <div onclick="sendData()" id="restart" class="button">
                         <h1>restart</h1>
                     </div>
-                    <div id="save" class="button">
+                    <div onclick="sendData()" id="save" class="button">
                         <h1>save your noumenon</h1>
                     </div>
                 </div>
@@ -476,6 +476,24 @@
         };
 
         let p5sketch = new p5(sketch, document.getElementById('sketch'));
+
+        //save finished noumenons to online collection
+        //let context = canvas.getContext('2d');
+
+        function sendData() {
+            let base64 = p5sketch.canvas.toDataURL();
+            var xmlhttp = new XMLHttpRequest();
+            //xmlhttp.onerror = function() {
+            //    console.error('There was an error 400');
+            //}​;
+            xmlhttp.open("POST", "http://localhost/noumenon/noumenon/online/imageSaver.php", true);
+            // xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            // xmlhttp.setRequestHeader("Cache-Control", "no-cache");
+            // xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            let formData = new FormData();
+            formData.append('data', base64);
+            xmlhttp.send(formData);
+        }
     </script>
 </body>
 

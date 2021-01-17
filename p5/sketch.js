@@ -122,7 +122,7 @@ function drawNoumenon() {
     }
 
     //writing png and printing functions.
-    if (surveyData[0] === -2) {
+    /*if (surveyData[0] === -2) {
         if (window.printed) return
         window.printed = true
 
@@ -132,7 +132,7 @@ function drawNoumenon() {
 
         resetAllParameters();
         return;
-    }
+    }*/
 
     //stop drawing after last question with 5 sec. interval
     if (surveyData[13] != undefined) {

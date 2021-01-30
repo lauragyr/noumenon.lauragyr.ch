@@ -24,7 +24,10 @@
     <div class="beta">
         <a href="beta.html">beta version</a>
     </div>
-
+    <div class="impressum">
+        <a href="impressum.html">Impressum</a>
+    </div>
+    
     <div class="container column">
         <div class="title">
             <a id="icon-box" href="00_noumenon_collection-overview.html">

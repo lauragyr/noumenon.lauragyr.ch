@@ -49,6 +49,13 @@ h3 {
     line-height: 1.2;
 }
 
+h4 {
+    font-family: Silka Medium;
+    font-size: 20px;
+    color: var(--dark-grey);
+    line-height: 1.5;
+}
+
 h5 {
     font-family: Silka Medium;
     font-size: 16px;
@@ -82,6 +89,25 @@ a {
     padding: 5px;
 }
 
+.impressum {
+    width: 140px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.impressum a {
+    color: var(--text-grey);
+    font-family: Silka Medium;
+    font-size: 14px;
+    transition: color .2s;
+}
+
+.impressum a:hover {
+    color: var(--primary);
+}
+
 .beta a {
     color: var(--white);
     font-size: 16px;
@@ -94,19 +120,34 @@ a {
     margin: 0 auto;
 }
 
-.beta-info a {
+.impressum-info {
+    padding-top: 10vh;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.beta-info a,
+.impressum-info a {
     font-family: Silka Medium;
     color: var(--primary);
     font-size: 18px;
     transition: color .2s;
+    margin-top: 20px;
 }
 
-.beta-info a:hover {
+.beta-info a:hover,
+.impressum-info a:hover {
     color: var(--dark-grey);
 }
 
-.beta-info>div {
+.beta-info>div,
+.impressum-info>div {
     margin-top: 30px;
+}
+
+.beta-info>div>div,
+.impressum-info>div>div {
+    margin-top: 10px;
 }
 
 

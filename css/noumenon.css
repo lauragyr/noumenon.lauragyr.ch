@@ -126,6 +126,10 @@ a {
     margin: 0 auto;
 }
 
+.imp-title {
+    margin-top: 10px;
+}
+
 .beta-info a,
 .impressum-info a {
     font-family: Silka Medium;

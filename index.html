@@ -1,25 +1,33 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <title>noumenon.lauragyr.ch</title>
 
     <link rel="stylesheet" href="css/noumenon.css">
 </head>
 
 <body>
-    <div class="header">
-        <ul>
-            <li><a class="header-link" id="active" href="index.html">about</a></li>
-            <li><a class="header-link" href="noumenon_creator.html">create</a></li>
-            <li><a class="header-link" href="noumenon_explanation.html">explanation</a></li>
-            <li><a class="header-link" href="00_noumenon_collection-overview.html">collection</a></li>
-            <li><a class="header-link" href="contact.html">contact</a></li>
+    <nav class="header">
+        <ul id="menu-links">
+
+            <li id="menubar">
+                <a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars menuicon"></i></a>
+            </li>
+            <nav id="nav">
+                <li><a class="header-link" id="active" href="index.html">about</a></li>
+                <li><a class="header-link" href="noumenon_creator.html">create</a></li>
+                <li><a class="header-link" href="noumenon_explanation.html">explanation</a></li>
+                <li><a class="header-link" href="00_noumenon_collection-overview.html">collection</a></li>
+                <li><a class="header-link" href="contact.html">contact</a></li>
+            </nav>
         </ul>
-    </div>
+    </nav>
 
     <div class="beta">
         <a href="beta.html">beta version</a>
@@ -29,7 +37,7 @@
     </div>
 
     <div class="home">
-        <img class="bg" src="assets/noumenon_home.png">
+        <img class="bg" src="assets/noumenon_home.png ">
         <div class="intro">
             <div class="box">
                 <p>What if there's a way we could visualize our personality. Noumenon does exactly that. Based on a questionnaire your own personal noumenon gets created while you're answering different kind of questions. Let's see what your personality
@@ -37,10 +45,20 @@
                 </p>
             </div>
             <div class="box">
-                <img class="logo" src="assets/noumenon_logo.png">
+                <img class="logo" src="assets/noumenon_logo.png ">
             </div>
         </div>
     </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("nav");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -478,8 +478,19 @@ li {
     #nav {
         display: none;
         flex-wrap: wrap;
+        animation: slide-down .5s ease-out;
         -webkit-animation: slide-down .5s ease-out;
         -moz-animation: slide-down .5s ease-out;
+    }
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(-100%);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+        }
     }
     @-webkit-keyframes slide-down {
         0% {
@@ -528,7 +539,4 @@ li .menuicon {
     margin: auto 0;
     color: var(--dark-grey);
     font-size: 24px;
-}
-
-
 }

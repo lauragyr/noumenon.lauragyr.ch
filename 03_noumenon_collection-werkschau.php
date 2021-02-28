@@ -43,7 +43,8 @@
             <?php
                 $file = "./noumenon/werkschau-images/images.txt";
                 $array = explode("\n", file_get_contents($file));
-                foreach ($array as $key => $value)
+                $randomSelection = array_rand($array, 33);
+                foreach ($randomSelection as $key => $value)
                 {
                     /*echo '<h2>'.$key.' and '.$value.'</h2>';*/
                     echo '<img src="./noumenon/werkschau-images/'.$value.'" alt="">';

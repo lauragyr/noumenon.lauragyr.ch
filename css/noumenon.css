@@ -213,6 +213,16 @@ li {
   display: none;
 }
 
+.backButton {
+    transition: stroke 0.5s;
+    stroke: var(--primary);
+}
+
+.backButton:hover {
+    transition: stroke 0.5s;
+    stroke: var(--black);
+}
+
 /* homepage */
 
 .home {

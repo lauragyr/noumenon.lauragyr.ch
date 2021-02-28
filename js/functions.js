@@ -1,12 +1,22 @@
 //menu-bar
-function myFunction() {
+function toggleMenu() {
     var x = document.getElementById("nav");
-    if (x.style.display === "none") {
+    if (x.style.display === "none" || x.style.display === '') {
         x.style.display = "flex";
     } else {
         x.style.display = "none";
     }
 }
+
+const resizeObserver = new ResizeObserver((entries) => {
+    const nav = document.getElementById("nav");
+    if (entries[0].contentRect.width === 0 && nav.style.display !== '') {
+        nav.style.display = "flex";
+    }
+
+});
+
+resizeObserver.observe(document.getElementById("menubar"));
 
 //backtotop
 //Get the button

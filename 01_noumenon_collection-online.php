@@ -48,6 +48,7 @@
             <?php
                     $file = "./noumenon/online/images.txt";
                     $array = explode("\n", file_get_contents($file));
+                    array_reverse($array, false);
                     foreach ($array as $key => $value)
                     {
                         /*echo '<h2>'.$key.' and '.$value.'</h2>';*/

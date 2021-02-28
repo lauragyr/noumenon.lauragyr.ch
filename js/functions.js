@@ -1,10 +1,14 @@
 //menu-bar
 function toggleMenu() {
-    var x = document.getElementById("nav");
-    if (x.style.display === "none" || x.style.display === '') {
-        x.style.display = "flex";
+    const nav = document.getElementById("nav");
+    const hamburgerButton = document.getElementById('hamburgerButton');
+
+    if (nav.style.display === "none" || nav.style.display === '') {
+        nav.style.display = "flex";
+        hamburgerButton.classList.add('is-active');
     } else {
-        x.style.display = "none";
+        nav.style.display = "none";
+        hamburgerButton.classList.remove('is-active');
     }
 }
 

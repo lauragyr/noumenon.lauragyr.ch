@@ -20,6 +20,7 @@
             <li><a class="header-link" href="contact.html">contact</a></li>
         </ul>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <div class="beta">
         <a href="beta.html">beta version</a>

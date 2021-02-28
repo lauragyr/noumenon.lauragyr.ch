@@ -47,7 +47,7 @@
                 foreach ($randomSelection as $key => $value)
                 {
                     /*echo '<h2>'.$key.' and '.$value.'</h2>';*/
-                    echo '<img src="./noumenon/werkschau-images/'.$value.'" alt="">';
+                    echo '<img src="./noumenon/werkschau-images/'.$array[$value].'" alt="">';
                 }
             ?>
  

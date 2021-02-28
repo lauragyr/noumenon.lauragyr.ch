@@ -497,6 +497,8 @@
             // xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             let formData = new FormData();
             formData.append('data', base64);
+            console.log(xmlhttp);
+            console.log(formData);
             xmlhttp.send(formData);
         }
     </script>

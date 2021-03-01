@@ -480,6 +480,15 @@ li {
         width: 80vw;
         height: auto;
     }
+    .example-box img {
+        width: 200px;
+        height: auto;
+    }
+    .example-box {
+        width: 80vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
     /* responsive menubar */
     #nav {
         display: none;

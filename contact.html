@@ -7,19 +7,34 @@
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
     <title>noumenon.lauragyr.ch // contact</title>
 
+    <link rel="stylesheet" href="libraries/hamburgers.min.css">
     <link rel="stylesheet" href="css/noumenon.css">
 </head>
 
 <body>
-    <div class="header">
-        <ul>
-            <li><a class="header-link" href="index.html">about</a></li>
-            <li><a class="header-link" href="noumenon_creator.html">create</a></li>
-            <li><a class="header-link" href="noumenon_explanation.html">explanation</a></li>
-            <li><a class="header-link" href="00_noumenon_collection-overview.html">collection</a></li>
-            <li><a class="header-link" id="active" href="contact.html">contact</a></li>
+    <nav class="header">
+        <ul id="menu-links">
+            <li id="menubar">
+                <a href="#" onclick="toggleMenu()">
+                    <button id="hamburgerButton" class="hamburger hamburger--elastic" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner">
+                      </span>
+                    </span>
+                  </button>
+                </a>
+            </li>
+
+            <div id="nav">
+                <li><a class="header-link" href="index.html">about</a></li>
+                <li><a class="header-link" href="noumenon_creator.html">create</a></li>
+                <li><a class="header-link" href="noumenon_explanation.html">explanation</a></li>
+                <li><a class="header-link" href="00_noumenon_collection-overview.html">collection</a></li>
+                <li><a class="header-link" id="active" href="contact.html">contact</a></li>
+            </div>
         </ul>
-    </div>
+    </nav>
+
     <div class="beta">
         <a href="beta.html">beta version</a>
     </div>
@@ -48,6 +63,7 @@
         </div>
     </div>
 
+    <script src="js/functions.js"></script>
 </body>
 
 </html>

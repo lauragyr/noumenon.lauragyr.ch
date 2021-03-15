@@ -328,7 +328,14 @@ li {
     display: block;
     height: 80vh;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 10%;
+}
+
+.example {
+    width: 80vw;
+    display: flex;
+    height: auto;
+    margin: auto;
 }
 
 
@@ -367,7 +374,9 @@ li {
 
 .noumenon {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 500px;
+    gap: 10px;
 }
 
 
@@ -480,15 +489,6 @@ li {
         width: 80vw;
         height: auto;
     }
-    .example-box img {
-        width: 200px;
-        height: auto;
-    }
-    .example-box {
-        width: 80vw;
-        display: flex;
-        flex-wrap: wrap;
-    }
     /* responsive menubar */
     #nav {
         display: none;
@@ -551,5 +551,20 @@ li {
         margin: auto 0;
         color: var(--dark-grey);
         font-size: 24px;
+    }
+}
+
+
+/* MEDIA QUERIES FOR NOUMENON COLLECTION GRID */
+
+@media only screen and (max-width: 1420) {
+    .noumenon {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 896) {
+    .noumenon {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

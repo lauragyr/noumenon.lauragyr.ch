@@ -1,9 +1,9 @@
 <?php
     $directory = './';
-    $scanned_directory = glob('*.{jpeg,gif,png}', GLOB_BRACE);
+    $images = preg_grep('~.(jpeg|jpg|png)$~', scandir($directory));
 
     $myfile = fopen("images.txt", "a") or die("Unable to open file!");
-    foreach ($scanned_directory as $key => $value)
+    foreach ($images as $key => $value)
     {
         fwrite($myfile, $value . "\r\n");
     }

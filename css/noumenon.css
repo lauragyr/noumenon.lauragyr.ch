@@ -75,6 +75,24 @@ a {
     color: var(--black);
 }
 
+.cta>h4 {
+    color: var(--white) !important;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+    background-color: var(--primary);
+    border-radius: 8px;
+    transition: color .2s, background-color .2s;
+    margin: 30px 0px;
+    border: solid 3px var(--primary);
+}
+
+.cta>h4:hover {
+    background-color: var(--white);
+    color: var(--primary)!important;
+    border: solid 3px var(--primary);
+}
+
 
 /* BETA */
 
@@ -484,6 +502,9 @@ li {
         flex-direction: column-reverse;
         height: auto;
         z-index: -2;
+    }
+    .button {
+        margin: 30px auto;
     }
     .box {
         width: 100%;
